@@ -54,6 +54,17 @@ const ADMIN_USERS: Record<
   },
 };
 
+export function listAdminDemoAccounts() {
+  return Object.entries(ADMIN_USERS).map(([email, user]) => ({
+    portal: "Admin" as const,
+    email,
+    password: user.password,
+    name: user.name,
+    role: user.role,
+    loginHref: "/admin/login",
+  }));
+}
+
 export function getAdminSession(): AdminSession | null {
   if (typeof window === "undefined") return null;
   const raw = sessionStorage.getItem(SESSION_KEY);

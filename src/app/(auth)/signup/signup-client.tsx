@@ -19,6 +19,7 @@ import {
   AuthFormLink,
 } from "@/components/auth/auth-form-header";
 import { AuthSubmitButton } from "@/components/auth/auth-form-elements";
+import { DemoAccountsLink } from "@/components/auth/demo-accounts-link";
 import {
   Select,
   SelectContent,
@@ -189,7 +190,8 @@ export default function SignupPageClient() {
         </div>
       </form>
 
-      <p className="mt-6 text-center text-xs text-medium-text">
+      <DemoAccountsLink className="mt-6" />
+      <p className="mt-3 text-center text-xs text-medium-text">
         By signing up, you agree to RiderPay&apos;s Terms and Privacy Policy.
       </p>
     </AuthSplitLayout>

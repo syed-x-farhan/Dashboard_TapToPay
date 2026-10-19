@@ -9,6 +9,7 @@ import {
   loginAdmin,
   getAdminSession,
 } from "@/admin-portal/lib/auth";
+import { DemoAccountsLink } from "@/components/auth/demo-accounts-link";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -93,9 +94,7 @@ export default function AdminLoginPage() {
             </AuthSubmitButton>
           </form>
 
-          <p className="mt-6 text-center text-xs text-medium-text">
-            Demo: fahad@riderpay.com / admin123
-          </p>
+          <DemoAccountsLink className="mt-6" />
         </div>
       </div>
     </div>

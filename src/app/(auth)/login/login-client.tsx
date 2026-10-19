@@ -11,6 +11,7 @@ import {
   AuthFormHeader,
   AuthFormLink,
 } from "@/components/auth/auth-form-header";
+import { DemoAccountsLink } from "@/components/auth/demo-accounts-link";
 import {
   AuthDivider,
   AuthGoogleButton,
@@ -164,9 +165,7 @@ export default function LoginPageClient() {
         </div>
       </form>
 
-      <p className="mt-7 text-center text-xs text-medium-text">
-        Demo roles — Partner: ops@ / manager@ / viewer@leopardscourier.com (demo) · Merchant: merchant@ / staff@ / viewer@kfcgulberg.com (demo)
-      </p>
+      <DemoAccountsLink className="mt-7" />
 
       <p className="mt-3 text-center text-xs text-medium-text">
         Protected by RiderPay.{" "}

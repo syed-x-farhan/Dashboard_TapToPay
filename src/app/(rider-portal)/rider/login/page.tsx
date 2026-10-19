@@ -6,6 +6,7 @@ import { Mail, Lock, Nfc, ShieldAlert, Bike } from "lucide-react";
 import { AuthField } from "@/components/auth/auth-field";
 import { AuthSubmitButton } from "@/components/auth/auth-form-elements";
 import { getRiderSession, riderLogin } from "@/lib/rider-auth";
+import { DemoAccountsLink } from "@/components/auth/demo-accounts-link";
 
 export default function RiderLoginPage() {
   const router = useRouter();
@@ -91,9 +92,7 @@ export default function RiderLoginPage() {
             </AuthSubmitButton>
           </form>
 
-          <p className="mt-6 text-center text-xs text-medium-text">
-            Demo: ahmed@riderpay.com / rider123 (Field) · lead@riderpay.com / lead123 (Supervisor) · fleet@riderpay.com / fleet123 (Ops)
-          </p>
+          <DemoAccountsLink className="mt-6" />
         </div>
       </div>
     </div>

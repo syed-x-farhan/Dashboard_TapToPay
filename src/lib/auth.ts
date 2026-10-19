@@ -111,6 +111,20 @@ const PORTAL_USERS: Record<
   },
 };
 
+export function listPortalDemoAccounts() {
+  return Object.entries(PORTAL_USERS).map(([email, user]) => ({
+    portal: user.accountType === "partner" ? ("Partner" as const) : ("Merchant" as const),
+    email,
+    password: user.password,
+    name: user.name,
+    role: user.role,
+    loginHref:
+      user.accountType === "partner"
+        ? "/login?accountType=partner"
+        : "/login?accountType=merchant",
+  }));
+}
+
 export function getSession(): AuthSession | null {
   if (typeof window === "undefined") return null;
   const raw = sessionStorage.getItem(SESSION_KEY);

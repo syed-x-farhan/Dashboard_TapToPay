@@ -37,6 +37,17 @@ const RIDER_USERS: Record<
   },
 };
 
+export function listRiderDemoAccounts() {
+  return Object.entries(RIDER_USERS).map(([email, user]) => ({
+    portal: "Rider" as const,
+    email,
+    password: user.password,
+    name: user.name,
+    role: user.role,
+    loginHref: "/rider/login",
+  }));
+}
+
 export function getRiderSession(): RiderSession | null {
   if (typeof window === "undefined") return null;
   const raw = sessionStorage.getItem(SESSION_KEY);
